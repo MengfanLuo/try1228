@@ -1,0 +1,113 @@
+---
+title: "Simple document"
+author: Mengfan Luo
+date: 2021-9-16
+output: 
+  html_document:
+    toc: True
+    toc_float: True
+    code_folding: hide
+---
+
+Put libraries at the top.
+
+```{r, message=FALSE}
+library(tidyverse)
+```
+
+
+
+
+I'm an R Markdown document! 
+
+# Section 1
+
+Here's a **code chunk** that samples from 
+a *normal distribution*:
+
+```{r}
+samp = rnorm(100)
+length(samp)
+```
+
+# Section 2
+
+I can take the mean of the sample, too!
+The mean is `r mean(samp)`.
+
+# Section 3
+
+Write a new code chunk
+
+The code chunk import the 'tidyverse',create a dataframe, and makes a histogram.
+
+inside the chunk name can have options including:
+echo=FALSE,collapse=TRUE,message=FALSE
+
+
+```{r new_code_chunk}
+#library(tidyverse)
+
+set.seed(1234)
+
+plot_df = 
+  tibble(
+    x = rnorm(1000, sd = .5),
+    y = 1 + 2 * x + rnorm(1000),
+    y_quad = 1 + 2 * x^2 + rnorm(1000)
+  )
+plot_df
+
+
+
+ggplot(plot_df,aes(x = x)) + geom_histogram()
+
+
+```
+
+
+# Learning assessment: 
+
+Write a named code chunk that creates a dataframe comprised of: a numeric variable containing a random sample of size 500 from a normal variable with mean 1; a logical vector indicating whether each sampled value is greater than zero; and a numeric vector containing the absolute value of each element. Then, produce a histogram of the absolute value variable just created. Add an inline summary giving the median value rounded to two decimal places. What happens if you set eval = FALSE to the code chunk? What about echo = FALSE
+
+```{r Learning_assesment}
+learning_df = 
+  tibble(
+    sample = rnorm(500, mean = 1),
+    vec_logic = sample > 0,
+    abs_val = abs(sample)
+  )
+
+ggplot(learning_df,aes(x = abs_val)) + geom_histogram()
+
+```
+
+Tables 
+------------------------------------------------------------
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
