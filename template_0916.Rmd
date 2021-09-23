@@ -2,11 +2,7 @@
 title: "Simple document"
 author: Mengfan Luo
 date: 2021-9-16
-output: 
-  html_document:
-    toc: True
-    toc_float: True
-    code_folding: hide
+output: github_document
 ---
 
 Put libraries at the top.
