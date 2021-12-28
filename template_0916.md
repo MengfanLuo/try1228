@@ -24,7 +24,7 @@ length(samp)
 
 # Section 2
 
-I can take the mean of the sample, too! The mean is -0.078565.
+I can take the mean of the sample, too! The mean is 0.052433.
 
 # Section 3
 
@@ -50,7 +50,7 @@ plot_df =
 plot_df
 ```
 
-    ## # A tibble: 1,000 x 3
+    ## # A tibble: 1,000 × 3
     ##         x      y  y_quad
     ##     <dbl>  <dbl>   <dbl>
     ##  1 -0.604 -1.41   0.755 
@@ -63,7 +63,7 @@ plot_df
     ##  8 -0.273  0.229  1.66  
     ##  9 -0.282 -0.238  0.713 
     ## 10 -0.445  0.556 -0.443 
-    ## # ... with 990 more rows
+    ## # … with 990 more rows
 
 ``` r
 ggplot(plot_df,aes(x = x)) + geom_histogram()
